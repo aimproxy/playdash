@@ -1,5 +1,8 @@
 import './globals.css'
 import {Inter} from 'next/font/google'
+import {Title} from '@tremor/react'
+import {twMerge} from 'tailwind-merge'
+import Link from 'next/link'
 
 const inter = Inter({subsets: ['latin']})
 
@@ -19,14 +22,27 @@ export default function RootLayout({children}: {
             {/* Left sidebar & main wrapper */}
             <div className="flex-1 min-w-0 bg-gray-50 xl:flex">
                 <div
-                    className="border-b border-gray-200 xl:border-b-0 xl:flex-shrink-0 xl:w-72 xl:border-r xl:border-gray-200">
-                    <div className="h-full pl-4 pr-6 py-6 sm:pl-6 lg:pl-8">
-                        {/* Start left column area */}
-                        <div className="h-full relative" style={{minHeight: '12rem'}}>
-                            <div className="absolute inset-0 border-2 border-gray-200 border-dashed rounded-lg"/>
+                    className="border-b border-gray-200 xl:border-b-0 xl:flex-shrink-0 xl:w-64 xl:border-r xl:border-gray-200 py-6">
+                    {/* Start left column area */}
+                    <div className="h-full relative overflow-y-auto">
+                        <div className="flex items-center flex-shrink-0 px-4">
+                            <Title>PlayKit</Title>
                         </div>
-                        {/* End left column area */}
+                        <div className="mt-5 flex-grow flex flex-col">
+                            <nav className="flex-1 px-2 pb-4 space-y-1">
+                                {['Get Started', 'Dashboards', 'Commands', 'Players', 'Audiences', 'Campaigns'].map(route => (
+                                    <Link href={route.replace(' ', '_').toLowerCase()}
+                                          key={route.replace(' ', '_').toLowerCase()}
+                                          className={twMerge(
+                                              false ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
+                                              'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
+                                          )}
+                                    >{route}</Link>
+                                ))}
+                            </nav>
+                        </div>
                     </div>
+                    {/* End left column area */}
                 </div>
 
                 <div className="bg-white lg:min-w-0 lg:flex-1">

@@ -34,6 +34,9 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
+  tailwind-merge:
+    specifier: ^1.13.0
+    version: 1.13.0
   tailwindcss:
     specifier: 3.3.2
     version: 3.3.2
