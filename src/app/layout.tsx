@@ -22,7 +22,7 @@ export default function RootLayout({children}: {
             {/* Left sidebar & main wrapper */}
             <div className="flex-1 min-w-0 bg-gray-50 xl:flex">
                 <div
-                    className="border-b border-gray-200 xl:border-b-0 xl:flex-shrink-0 xl:w-64 xl:border-r xl:border-gray-200 py-6">
+                    className="xl:flex-shrink-0 xl:w-56 py-6">
                     {/* Start left column area */}
                     <div className="h-full relative overflow-y-auto">
                         <div className="flex items-center flex-shrink-0 px-4">
@@ -45,7 +45,7 @@ export default function RootLayout({children}: {
                     {/* End left column area */}
                 </div>
 
-                <div className="bg-white lg:min-w-0 lg:flex-1">
+                <div className="bg-white rounded-tl-xl border-t border-l border-gray-200 shadow-md lg:min-w-0 lg:flex-1">
                     <div className="h-full py-6 px-4 sm:px-6 max-w-7xl mx-auto">
                         {/* Start the main area */}
                         {children}
