@@ -1,11 +1,8 @@
-import {Card, Grid, Text, Title} from "@tremor/react";
+import {Card, Grid} from "@tremor/react";
 
-export default function Home() {
+export default function Dashboards() {
     return (
         <main>
-            <Title>Dashboard</Title>
-            <Text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</Text>
-
             <Grid numColsMd={2} numColsLg={3} className="gap-6 mt-6">
                 <Card>
                     {/* Placeholder to set height */}
